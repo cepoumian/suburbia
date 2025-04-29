@@ -9,6 +9,7 @@ import { createClient } from "@/prismicio";
 import Preview from "./Preview";
 import { asImageSrc } from "@prismicio/client";
 import Controls from "./Controls";
+import Loading from "./loading";
 
 type SearchParams = {
   wheel?: string;
@@ -77,6 +78,7 @@ export default async function Page(props: {
           </ButtonLink>
         </div>
       </CustomizerControlsProvider>
+      <Loading />
     </div>
   );
 }
