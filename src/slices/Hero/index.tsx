@@ -8,7 +8,7 @@ import {
 // import { PrismicNextLink } from "@prismicio/next";
 import { Bounded } from "../components/Bounded";
 import { Heading } from "../components/Heading";
-import { ButtonLink } from "../components/ButtonLink";
+// import { ButtonLink } from "../components/ButtonLink";
 import { WideLogo } from "./WideLogo";
 import { TallLogo } from "./TallLogo";
 import { InteractiveSkateboard } from "./InteractiveSkateboard";
@@ -50,18 +50,18 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         <Heading className="relative max-w-2xl place-self-start">
           <PrismicText field={slice.primary.heading} />
         </Heading>
-        <div className="flex relative w-full flex-col items-center justify-between ~gap-2/4 lg:flex-row">
+        <div className="flex relative w-full flex-col items-center justify-between ~gap-2/4 ">
           <div className="max-w-[45ch] font-semibold ~text-lg/xl">
             <PrismicRichText field={slice.primary.body} />
           </div>
-          <ButtonLink
+          {/* <ButtonLink
             field={slice.primary.button}
             icon="skateboard"
             size="lg"
             className="z-20 mt-2 block"
           >
             {slice.primary.button.text}
-          </ButtonLink>
+          </ButtonLink> */}
         </div>
       </div>
       <InteractiveSkateboard

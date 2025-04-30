@@ -1,4 +1,4 @@
-import { ButtonLink } from "@/slices/components/ButtonLink";
+// import { ButtonLink } from "@/slices/components/ButtonLink";
 import { Heading } from "@/slices/components/Heading";
 import { Logo } from "@/slices/components/Logo";
 import Link from "next/link";
@@ -73,9 +73,9 @@ export default async function Page(props: {
             className="mb-6"
           />
 
-          <ButtonLink href="" color="lime" icon="plus">
+          {/* <ButtonLink href="" color="lime" icon="plus">
             Add to cart
-          </ButtonLink>
+          </ButtonLink> */}
         </div>
       </CustomizerControlsProvider>
       <Loading />

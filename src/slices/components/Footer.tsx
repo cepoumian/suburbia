@@ -6,7 +6,7 @@ import { FooterPhysics } from "./FooterPhysics";
 import { asImageSrc } from "@prismicio/client";
 import { NavigationLink } from "./NavigationLink";
 
-export async function Footer({}) {
+export async function Footer() {
   const client = createClient();
   const settings = await client.getSingle("settings");
 
