@@ -20,6 +20,7 @@ export type VideoBlockProps = SliceComponentProps<Content.VideoBlockSlice>;
 const VideoBlock: FC<VideoBlockProps> = ({ slice }) => {
   return (
     <Bounded
+      id="video"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="bg-texture bg-zinc-900"

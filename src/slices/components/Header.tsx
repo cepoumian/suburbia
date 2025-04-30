@@ -1,13 +1,14 @@
-import Link from "next/link"
-import React from "react"
-import { ButtonLink } from "./ButtonLink"
-import { Logo } from "./Logo"
-import { createClient } from "@/prismicio"
-import { PrismicNextLink } from "@prismicio/next"
+import Link from "next/link";
+import React from "react";
+import { ButtonLink } from "./ButtonLink";
+import { Logo } from "./Logo";
+import { createClient } from "@/prismicio";
+// import { PrismicNextLink } from "@prismicio/next";
+import { NavigationLink } from "./NavigationLink";
 
 export async function Header() {
-  const client = createClient()
-  const settings = await client.getSingle("settings")
+  const client = createClient();
+  const settings = await client.getSingle("settings");
 
   return (
     <header className="header absolute left-0 right-0 top-0 z-50 ~h-32/48 ~px-4/6 ~py-4/6 hd:h-32">
@@ -21,11 +22,18 @@ export async function Header() {
         >
           <ul className="flex flex-wrap items-center justify-center gap-8">
             {settings.data.navigation.map((item) => (
+              <li key={item.link.text || "nav-item"}>
+                <NavigationLink field={item.link} className="~text-lg/xl" />
+              </li>
+            ))}
+          </ul>
+          {/* <ul className="flex flex-wrap items-center justify-center gap-8">
+            {settings.data.navigation.map((item) => (
               <li key={item.link.text}>
                 <PrismicNextLink field={item.link} className="~text-lg/xl" />
               </li>
             ))}
-          </ul>
+          </ul> */}
         </nav>
         <div className="justify-self-end">
           <ButtonLink href="" icon="cart" color="purple" aria-label="Cart (1)">
@@ -35,5 +43,5 @@ export async function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

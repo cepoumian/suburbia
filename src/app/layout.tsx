@@ -3,6 +3,7 @@ import { Bowlby_One_SC, DM_Mono } from "next/font/google";
 import "./globals.css";
 import { SVGFilters } from "@/slices/components/SVGFilters";
 import { createClient } from "@/prismicio";
+import { HashNavigationHandler } from "@/slices/components/HashNavigationHandlers";
 
 const bowlby = Bowlby_One_SC({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body
         className={`${bowlby.variable} ${dmMono.variable} antialiased font-mono font-medium text-zinc-800`}
       >
+        <HashNavigationHandler />
         <main>{children}</main>
         <SVGFilters />
       </body>

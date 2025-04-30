@@ -17,6 +17,7 @@ export type ProductGridProps = SliceComponentProps<Content.ProductGridSlice>;
 const ProductGrid: FC<ProductGridProps> = ({ slice }) => {
   return (
     <Bounded
+      id="latest"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="bg-texture bg-brand-gray"

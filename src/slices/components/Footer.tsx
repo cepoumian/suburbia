@@ -1,13 +1,12 @@
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 import { createClient } from "@/prismicio";
 import { Logo } from "./Logo";
 import { Bounded } from "./Bounded";
 import { FooterPhysics } from "./FooterPhysics";
 import { asImageSrc } from "@prismicio/client";
+import { NavigationLink } from "./NavigationLink";
 
-// type Props = {};
-
-export async function Footer({} /* : Props */) {
+export async function Footer({}) {
   const client = createClient();
   const settings = await client.getSingle("settings");
 
@@ -31,16 +30,17 @@ export async function Footer({} /* : Props */) {
         />
         <Logo className="pointer-events-none relative h-20 mix-blend-exclusion md:h-28" />
       </div>
-      <Bounded as="nav">
-        <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
-          {settings.data.navigation.map((item) => (
-            <li key={item.link.text} className="hover:underline">
-              <PrismicNextLink field={item.link} />
-            </li>
-          ))}
-        </ul>
+      <Bounded id="footer">
+        <nav>
+          <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
+            {settings.data.navigation.map((item) => (
+              <li key={item.link.text} className="hover:underline">
+                <NavigationLink field={item.link} />
+              </li>
+            ))}
+          </ul>
+        </nav>
       </Bounded>
-      {/* List of links */}
     </footer>
   );
 }
