@@ -1,4 +1,3 @@
-// src/slices/components/NavigationLink.tsx
 "use client";
 
 import { useScrollNavigation } from "@/lib/useScrollNavigation";

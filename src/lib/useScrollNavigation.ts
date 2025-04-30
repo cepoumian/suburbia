@@ -1,4 +1,3 @@
-// src/lib/useScrollNavigation.ts
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
